@@ -20,6 +20,15 @@ RSpec.describe Smartphone, type: :model do
         expect(subject).to_not be_valid
       end
     end
+
+    describe 'battery' do
+      it 'must be only integer' do
+        subject.battery = 7200
+        expect(subject).to be_valid
+        subject.battery = '7200 mAH'
+        expect(subject).to_not be_valid
+      end
+    end
   end
 
   # instance method
