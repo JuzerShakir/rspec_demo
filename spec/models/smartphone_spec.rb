@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Smartphone, type: :model do
   subject { described_class.new(brand: 'Samsung', model: 'Galaxy Fold 2')}
 
+  # checking validations for attributes
   describe 'Validation' do
     describe 'brand' do
       it 'must be present' do
@@ -21,12 +22,14 @@ RSpec.describe Smartphone, type: :model do
     end
   end
 
+  # instance method
   describe '#full_name' do
     it 'must return full name of a smartphone with brand and model' do
       expect(subject.full_name).to eql('Samsung Galaxy Fold 2')
     end
   end
 
+  # class method
   describe '.samsung' do
     it 'must return an ActiveRecord:Relation of only samsung smartphones' do
       s1 = described_class.create(brand:'Samsung', model: 'Galaxy')
