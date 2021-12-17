@@ -1,2 +1,14 @@
 <h1>Smartphones</h1>
 <%= link_to 'About', about_path %>
+
+<% if @phones.count > 0 %>
+  <ul>
+      <% @phones.each  do | phone | %>
+      <li> <%= phone.full_name %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+
+<%= link_to 'Add new Smartphone', new_path %>
