@@ -1,0 +1,15 @@
+<%= form_for(@phone, url: :create) do | form | %>
+  <label>
+    Brand
+    <%= form.text_field(:brand) %>
+  </label>
+
+  <br>
+
+  <labeL>
+    Model
+    <%= form.text_field(:model) %>
+  </labeL>
+
+  <%= form.submit('Create') %>
+<% end %>
